@@ -78,7 +78,10 @@ function setAttr (el: Element, key: string, value: any) {
     if (isFalsyAttrValue(value)) {
       el.removeAttribute(key)
     } else {
-      el.setAttribute(key, value)
+        try {
+			el.setAttribute(key, value);
+		}
+		catch(e) { }
     }
   }
 }
